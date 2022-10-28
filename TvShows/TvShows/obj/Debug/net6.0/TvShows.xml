@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TvShows</name>
+    </assembly>
+    <members>
+        <member name="M:TvShows.Controllers.TvShowsController.GetTvShows">
+            <summary>
+            Get All TvShows
+            </summary>
+            <response code="200">TvShows</response>
+        </member>
+        <member name="M:TvShows.Controllers.TvShowsController.GetTvShow(System.Int32)">
+            <summary>
+            Get TvShow by id
+            </summary>
+            <response code="200">TvShow</response>
+        </member>
+        <member name="M:TvShows.Controllers.TvShowsController.GetTvShowActors(System.Int32)">
+            <summary>
+            Get Actors from TvShow
+            </summary>
+            <response code="200">Actors</response>
+        </member>
+        <member name="M:TvShows.Controllers.TvShowsController.GetTvShowsByGenre(System.String)">
+            <summary>
+            Get TvShows by Genre
+            </summary>
+            <response code="200">TvShows</response>
+        </member>
+        <member name="M:TvShows.Controllers.UsersController.PostUser(TvShows.Models.User)">
+            <summary>
+            Create User
+            </summary>
+            <response code="200">User created</response>
+        </member>
+        <member name="M:TvShows.Controllers.UsersController.PostFavorites(System.Int32,System.Int32)">
+            <summary>
+            Add TvShow to Favorites
+            </summary>
+            <response code="200">Favorite added</response>
+        </member>
+        <member name="M:TvShows.Controllers.UsersController.GetUserFavorites(System.Int32)">
+            <summary>
+            Get the favorites of the user with the user id
+            </summary>
+            <response code="200">Favorites</response>
+        </member>
+        <member name="M:TvShows.Controllers.UsersController.DeleteUser(System.Int32,System.Int32)">
+            <summary>
+            Delete the TvShow from the user favorites
+            </summary>
+            <response code="200">Favorite deleted</response>
+        </member>
+    </members>
+</doc>
