@@ -7,6 +7,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch.Internal;
+using System.Net;
+using System.Web.Mvc;
 
 namespace TvShows.Service
 {
@@ -19,14 +21,20 @@ namespace TvShows.Service
             _context = context;
         }
 
-        public async Task<ActionResult<IEnumerable<TvShow>>> GetTvShows()
+        public async Task<IEnumerable<TvShow>> GetTvShows()
         {
-            return await _context.TvShows.ToListAsync();
+            var tvShows = await _context.TvShows.ToListAsync();
+            return tvShows;
         }
 
-        public async Task<ActionResult<TvShow>> GetTvShow(int id)
+        public async Task<TvShow> GetTvShow(int id)
         {
             var tvShow = await _context.TvShows.FindAsync(id);
+
+            if(tvShow == null)
+            {
+                return new TvShow();
+            }
 
             await _context.Entry(tvShow).Collection(character => character.Characters).LoadAsync();
             await _context.Entry(tvShow).Collection(episodes => episodes.Episodes).LoadAsync();

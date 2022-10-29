@@ -5,9 +5,9 @@ namespace TvShows.Service
 {
     public interface ITvShowService
     {
-        Task<ActionResult<IEnumerable<TvShow>>> GetTvShows();
+        Task<IEnumerable<TvShow>> GetTvShows();
 
-        Task<ActionResult<TvShow>> GetTvShow(int id);
+        Task<TvShow> GetTvShow(int id);
 
         Task<List<Actor>> GetTvShowActors(int id);
 

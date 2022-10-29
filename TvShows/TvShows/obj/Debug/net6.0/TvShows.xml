@@ -15,24 +15,28 @@
             Get TvShow by id
             </summary>
             <response code="200">TvShow</response>
+            <response code="404">TvShow Not Found</response>
         </member>
         <member name="M:TvShows.Controllers.TvShowsController.GetTvShowActors(System.Int32)">
             <summary>
             Get Actors from TvShow
             </summary>
             <response code="200">Actors</response>
+            <response code="404">Actors Not Found</response>
         </member>
         <member name="M:TvShows.Controllers.TvShowsController.GetTvShowsByGenre(System.String)">
             <summary>
             Get TvShows by Genre
             </summary>
             <response code="200">TvShows</response>
+            <response code="404">TvShows Not Found</response>
         </member>
         <member name="M:TvShows.Controllers.UsersController.PostUser(TvShows.Models.User)">
             <summary>
             Create User
             </summary>
             <response code="200">User created</response>
+            <response code="400">User not created because of field errors</response>
         </member>
         <member name="M:TvShows.Controllers.UsersController.PostFavorites(System.Int32,System.Int32)">
             <summary>
@@ -45,12 +49,14 @@
             Get the favorites of the user with the user id
             </summary>
             <response code="200">Favorites</response>
+            <response code="404">Favorites Not Found</response>
         </member>
         <member name="M:TvShows.Controllers.UsersController.DeleteUser(System.Int32,System.Int32)">
             <summary>
             Delete the TvShow from the user favorites
             </summary>
             <response code="200">Favorite deleted</response>
+            <response code="404">Favorite Not Found</response>
         </member>
     </members>
 </doc>
